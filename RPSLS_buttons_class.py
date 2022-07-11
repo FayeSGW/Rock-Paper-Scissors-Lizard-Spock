@@ -31,11 +31,11 @@ class Game(Tk):
         self.results = ttk.Label(self.mainframe, text = f" \n ", font = 10)
 
         #Button Images
-        self.rockphoto = PhotoImage(file = r"Rock3.png")
-        self.paperphoto = PhotoImage(file = r"Paper3.png")
-        self.scissorsphoto = PhotoImage(file = r"Scissors3.png")
-        self.lizardphoto = PhotoImage(file = r"Lizard3.png")
-        self.spockphoto = PhotoImage(file = r"Spock3.png")
+        self.rockphoto = PhotoImage(file = r"Images\Rock3.png")
+        self.paperphoto = PhotoImage(file = r"Images\Paper3.png")
+        self.scissorsphoto = PhotoImage(file = r"Images\Scissors3.png")
+        self.lizardphoto = PhotoImage(file = r"Images\Lizard3.png")
+        self.spockphoto = PhotoImage(file = r"Images\Spock3.png")
 
         #Buttons
         self.rock_button = Button(self.mainframe, image = self.rockphoto, width = 150, height = 150, command = self.rock)
