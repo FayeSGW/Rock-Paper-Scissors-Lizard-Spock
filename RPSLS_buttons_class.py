@@ -8,8 +8,10 @@ class Game(Tk):
         super().__init__()
 
         self.title("Rock Paper Scissors Lizard Spock")
+        self.intro = ttk.Frame(self, padding = "20 10 10 10")
+        self.intro.grid(column = 0, row = 0)
         self.mainframe = ttk.Frame(self, padding = "10 10 10 10")
-        self.mainframe.grid(column = 0, row = 0, sticky = (N, W, E, S))
+        self.mainframe.grid(column = 0, row = 1, sticky = (N, W, E, S))
 
         self.choice = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
 
@@ -17,7 +19,8 @@ class Game(Tk):
         self.comp_score = 0
 
         #Labels
-        self.player_choice_text = ttk.Label(self.mainframe, text = "Your Choice:   ", font = 10, justify = RIGHT)
+        self.intro = ttk.Label(self.intro, text = "Welcome to Rock-Paper-Scissors-Lizard-Spock! Click a button to play.", font = 10, justify = CENTER)
+        self.player_choice_text = ttk.Label(self.mainframe, text = "Your Choice:   ", font = 10)
         self.player_choice = ttk.Label(self.mainframe, text = "", font = 10)
         self.comp_choice_text = ttk.Label(self.mainframe, text = "Computer's Choice:   ", font = 10)
         self.comp_choice = ttk.Label(self.mainframe, text = "", font = 10)
@@ -26,40 +29,39 @@ class Game(Tk):
         self.player = ttk.Label(self.mainframe, text = self.player_score, font = 10)
         self.comp = ttk.Label(self.mainframe, text = self.comp_score, font = 10)
         self.results = ttk.Label(self.mainframe, text = f" \n ", font = 10)
-        self.blank = ttk.Label(self.mainframe, text = "   ", font = 10)
 
         #Button Images
-        self.rockphoto = PhotoImage(file = r"Rock.png")
-        self.paperphoto = PhotoImage(file = r"Paper.png")
-        self.scissorsphoto = PhotoImage(file = r"Scissors.png")
-        self.lizardphoto = PhotoImage(file = r"Lizard.png")
-        self.spockphoto = PhotoImage(file = r"Spock.png")
+        self.rockphoto = PhotoImage(file = r"Rock3.png")
+        self.paperphoto = PhotoImage(file = r"Paper3.png")
+        self.scissorsphoto = PhotoImage(file = r"Scissors3.png")
+        self.lizardphoto = PhotoImage(file = r"Lizard3.png")
+        self.spockphoto = PhotoImage(file = r"Spock3.png")
 
         #Buttons
-        self.rock_button = Button(self.mainframe, image = self.rockphoto, width = 200, height = 200, command = self.rock)
-        self.paper_button = Button(self.mainframe, image = self.paperphoto, width = 200, height = 200, font = 10, command = self.paper)
-        self.scissors_button = Button(self.mainframe, image = self.scissorsphoto, width = 200, height = 200, command = self.scissors)
-        self.lizard_button = Button(self.mainframe, image = self.lizardphoto, width = 200, height = 200, command = self.lizard)
-        self.spock_button = Button(self.mainframe, image = self.spockphoto, width = 200, height = 200, command = self.spock)
+        self.rock_button = Button(self.mainframe, image = self.rockphoto, width = 150, height = 150, command = self.rock)
+        self.paper_button = Button(self.mainframe, image = self.paperphoto, width = 150, height = 150, font = 10, command = self.paper)
+        self.scissors_button = Button(self.mainframe, image = self.scissorsphoto, width = 150, height = 150, command = self.scissors)
+        self.lizard_button = Button(self.mainframe, image = self.lizardphoto, width = 150, height = 150, command = self.lizard)
+        self.spock_button = Button(self.mainframe, image = self.spockphoto, width = 150, height = 150, command = self.spock)
         self.reset_button = Button(self.mainframe, text = "Reset", font = 10, width = 10, command = self.reset).grid(column = 3, row = 7)
         self.quit_button = Button(self.mainframe, text = "Stop", font = 10, width = 10, command = self.quit).grid(column = 3, row = 8)
 
         #Gridding
+        self.intro.grid(column = 0, row = 0)
         self.player_choice_text.grid(column = 1, row = 3, sticky = "e")
         self.player_choice.grid(column = 2, row = 3, sticky = "w")
-        self.comp_choice_text.grid(column = 4, row = 3, sticky = "e")
+        self.comp_choice_text.grid(column = 3, row = 3, columnspan = 2, sticky = "e")
         self.comp_choice.grid(column = 5, row = 3, sticky = "w")
         self.player_score_text.grid(column = 1, row = 5, sticky = "e")
         self.player.grid(column = 2, row = 5, sticky = "w")
-        self.comp_score_text.grid(column = 4, row = 5, sticky = "e")
+        self.comp_score_text.grid(column = 3, row = 5, columnspan = 2, sticky = "e")
         self.comp.grid(column = 5, row = 5, sticky = "w")
         self.results.grid(column = 2, row = 4, columnspan = 3)
-        self.blank.grid(column = 1, row = 2)
-        self.rock_button.grid(column = 1, row = 1)
-        self.paper_button.grid(column = 2, row = 1)
-        self.scissors_button.grid(column = 3, row = 1)
-        self.lizard_button.grid(column = 4, row = 1)
-        self.spock_button.grid(column = 5, row = 1)
+        self.rock_button.grid(column = 1, row = 1, padx = 5, pady = "0 20")
+        self.paper_button.grid(column = 2, row = 1, padx = 5, pady = "0 20")
+        self.scissors_button.grid(column = 3, row = 1, padx = 5, pady = "0 20")
+        self.lizard_button.grid(column = 4, row = 1, padx = 5, pady = "0 20")
+        self.spock_button.grid(column = 5, row = 1, padx = 5, pady = "0 20")
 
     
     def rock(self):
