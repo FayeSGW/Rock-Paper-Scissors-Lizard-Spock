@@ -67,6 +67,7 @@ class Game(Tk):
     def rock(self):
         b = random.choice(self.choice)
         
+        
         if b == "Paper":
             result = f"Paper covers rock!  \nComputer wins."
         elif b == "Scissors":
