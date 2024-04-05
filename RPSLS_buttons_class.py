@@ -63,7 +63,7 @@ class Game(Tk):
         self.lizard_button.grid(column = 4, row = 1, padx = 5, pady = "0 20")
         self.spock_button.grid(column = 5, row = 1, padx = 5, pady = "0 20")
 
-        def paper(self):
+    def paper(self):
         b = random.choice(self.choice)
         if b == "Rock":
             result = f"Paper covers rock! \nYou win."
@@ -74,7 +74,7 @@ class Game(Tk):
         elif b == "Spock":
             result = f"Paper disproves Spock! \nYou win."
         else:
-            result = "It's a draw!\n"
+            result = "It's a draw!!\n"
         self.player_choice.config(text = "Paper")
         self.comp_choice.config(text = b)
         self.results.config(text = result, justify = CENTER)
@@ -97,7 +97,7 @@ class Game(Tk):
         elif b == "Spock":
             result = f"Spock vapourises rock! \nComputer wins."
         else:
-            result = "It's a draw!\n"
+            result = "It's a draw!!\n"
         self.player_choice.config(text = "Rock")
         self.comp_choice.config(text = b)
         self.results.config(text = result, justify = CENTER)
@@ -119,7 +119,7 @@ class Game(Tk):
         elif b == "Spock":
             result = f"Spock smashes scissors! \nComputer wins."
         else:
-            result = "It's a draw!\n"
+            result = "It's a draw!!\n"
         self.player_choice.config(text = "Scissors")
         self.comp_choice.config(text = b)
         self.results.config(text = result, justify = CENTER)
@@ -141,7 +141,7 @@ class Game(Tk):
         elif b == "Spock":
             result = f"Lizard poisons Spock! \nYou win."
         else:
-            result = "It's a draw!\n"
+            result = "It's a draw!!\n"
         self.player_choice.config(text = "Lizard")
         self.comp_choice.config(text = b)
         self.results.config(text = result, justify = CENTER)
@@ -163,7 +163,7 @@ class Game(Tk):
         elif b == "Lizard":
             result = f"Lizard poisons Spock! \nComputer wins."
         else:
-            result = "It's a draw!\n"
+            result = "It's a draw!!\n"
         self.player_choice.config(text = "Spock")
         self.comp_choice.config(text = b)
         self.results.config(text = result, justify = CENTER)
