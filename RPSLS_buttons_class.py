@@ -63,32 +63,7 @@ class Game(Tk):
         self.lizard_button.grid(column = 4, row = 1, padx = 5, pady = "0 20")
         self.spock_button.grid(column = 5, row = 1, padx = 5, pady = "0 20")
 
-    
-    def rock(self):
-        b = random.choice(self.choice)
-        
-        
-        if b == "Paper":
-            result = f"Paper covers rock!  \nComputer wins."
-        elif b == "Scissors":
-            result = f"Rock breaks scissors! \nYou win."
-        elif b == "Lizard":
-            result = f"Rock crushes lizard! \nYou win."
-        elif b == "Spock":
-            result = f"Spock vapourises rock! \nComputer wins."
-        else:
-            result = "It's a draw!\n"
-        self.player_choice.config(text = "Rock")
-        self.comp_choice.config(text = b)
-        self.results.config(text = result, justify = CENTER)
-        if b == "Scissors" or b == "Lizard":
-            self.player_score += 1
-            self.player.config(text = self.player_score)
-        elif b == "Paper" or b == "Spock":
-            self.comp_score += 1
-            self.comp.config(text = self.comp_score)
-
-    def paper(self):
+        def paper(self):
         b = random.choice(self.choice)
         if b == "Rock":
             result = f"Paper covers rock! \nYou win."
@@ -107,6 +82,29 @@ class Game(Tk):
             self.player_score += 1
             self.player.config(text = self.player_score)
         elif b == "Paper" or b == "Lizard":
+            self.comp_score += 1
+            self.comp.config(text = self.comp_score)
+
+    def rock(self):
+        b = random.choice(self.choice)
+        
+        if b == "Paper":
+            result = f"Paper covers rock!  \nComputer wins."
+        elif b == "Scissors":
+            result = f"Rock breaks scissors! \nYou win."
+        elif b == "Lizard":
+            result = f"Rock crushes lizard! \nYou win."
+        elif b == "Spock":
+            result = f"Spock vapourises rock! \nComputer wins."
+        else:
+            result = "It's a draw!\n"
+        self.player_choice.config(text = "Rock")
+        self.comp_choice.config(text = b)
+        self.results.config(text = result, justify = CENTER)
+        if b == "Scissors" or b == "Lizard":
+            self.player_score += 1
+            self.player.config(text = self.player_score)
+        elif b == "Paper" or b == "Spock":
             self.comp_score += 1
             self.comp.config(text = self.comp_score)
 
