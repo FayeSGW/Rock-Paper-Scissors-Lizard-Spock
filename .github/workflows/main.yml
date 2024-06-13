@@ -3,7 +3,7 @@ name: Main
 on:
   push:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
     name: SonarCloud
