@@ -5,4 +5,4 @@
  GUI created using tkinter.
 
  Image for "rock" is from emojipedia.org; others are from emojidex.com
- 
+
