@@ -23,4 +23,4 @@ jobs:
         with:
           args: >
             -Dsonar.analysis.test=xyz
-            -Dsonar.analysis.testlist=[x,y,z]
+            -Dsonar.analysis.testlist=x,y,z
