@@ -23,3 +23,4 @@ jobs:
         with:
           args: >
             -Dsonar.analysis.kosli_trail=trail-test
+            -Dsonar.analysis.kosli_artifact_fingerprint=5bb56d5eb9f4fc31fb8d0f368fa1ac076d777dda3742557ab9db2df6e38e149e
