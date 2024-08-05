@@ -8,9 +8,8 @@ on:
     types: [opened]
 
 env:
-    KOSLI_FLOW: sonarcloud-webhook
-    KOSLI_TRAIL: trail-test
-    KOSLI_ARTIFACT_FINGERPRINT: 5bb56d5eb9f4fc31fb8d0f368fa1ac076d777dda3742557ab9db2df6e38e149e
+  KOSLI_FLOW: sonarcloud-new-project-test
+  KOSLI_TRAIL: ${{ github.sha }}
 
 jobs:
   sonarcloud:
@@ -29,4 +28,3 @@ jobs:
           args: >
             -Dsonar.analysis.kosli_flow=${{ env.KOSLI_FLOW }}
             -Dsonar.analysis.kosli_trail=${{ env.KOSLI_TRAIL }}
-            -Dsonar.analysis.kosli_artifact_fingerprint=${{ env.KOSLI_ARTIFACT_FINGERPRINT }}
