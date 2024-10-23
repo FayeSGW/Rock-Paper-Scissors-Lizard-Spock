@@ -2,14 +2,9 @@ name: Main
 
 on:
   push:
-    branches:
-      - main
   pull_request:
     types: [opened]
 
-env:
-  KOSLI_FLOW: sonarcloud-new-project-test
-  KOSLI_TRAIL: ${{ github.sha }}
 
 jobs:
   sonarcloud:
@@ -26,5 +21,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.analysis.kosli_flow=${{ env.KOSLI_FLOW }}
-            -Dsonar.analysis.kosli_trail=${{ env.KOSLI_TRAIL }}
+            -sonar.branch.name=main
+            -sonar.branch.target=main
